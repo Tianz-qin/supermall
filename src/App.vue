@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+<!--   主要用于保留组件状态或避免重新渲染。-->
+    <keep-alive exclude="Detail">
+      <router-view/>
+    </keep-alive>
     <main-tarbar/>
   </div>
 </template>

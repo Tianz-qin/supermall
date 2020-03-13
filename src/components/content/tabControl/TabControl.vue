@@ -1,7 +1,12 @@
 <template>
+<!--  props->titles
+   div -> 根据titles v-for 遍历 div->span{{title}}-->
   <div class="tab-control">
-    <div v-for="(item, index) in titles" class="tab-control-item"
-         @click="itemClick(index)" :class="{active: index === currentIndex}">
+<!--    动态绑定类名-->
+    <div v-for="(item, index) in titles"
+         class="tab-control-item"
+         @click="itemClick(index)"
+         :class="{active: index === currentIndex}">
       <span>{{item}}</span>
     </div>
   </div>

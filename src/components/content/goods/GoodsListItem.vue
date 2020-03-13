@@ -1,6 +1,6 @@
 <template>
-  <div class="goods-item">
-    <img :src="goodsItem.show.img" alt="">
+  <div class="goods-item" @click="itemClick">
+    <img v-lazy="showImage" alt="" @load="imageLoad">
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -12,12 +12,41 @@
 <script>
   export default {
     name: "GoodsListItem",
+    data(){
+      return {
+        showId: null
+      }
+    },
     props:{
       goodsItem:{
         type:Object,
         default(){
           return {}
         }
+      }
+    },
+    computed:{
+      showImage(){
+        return this.goodsItem.image || this.goodsItem.show.img
+      }
+    },
+    methods:{
+      imageLoad(){
+        //通过事件总线传递信息
+        this.$bus.$emit('imageLoad')
+      },
+      itemClick(){
+        if(this.goodsItem.iid){
+          this.showId = this.goodsItem.iid
+        }else {
+          console.log(this.goodsItem.shop_id);
+          this.showId = this.goodsItem.shop_id
+        }
+        //push可以后退 replace不可后退
+        //动态路由传递参数,也可以用query方式
+        this.$router.push({
+          path:'/detail/' + this.showId
+        })
       }
     }
   }

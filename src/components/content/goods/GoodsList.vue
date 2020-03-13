@@ -26,7 +26,9 @@
 <style scoped>
   .goods {
     display: flex;
+    /*让弹性盒元素在必要的时候拆行*/
     flex-wrap: wrap;
+    /*在弹性盒对象的 <div> 元素中的各项周围留有空白*/
     justify-content: space-around;
 
     padding: 2px;

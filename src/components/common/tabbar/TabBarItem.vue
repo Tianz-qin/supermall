@@ -39,7 +39,7 @@
     },
     methods:{
       itemClick(){
-        console.log(this.acolor);
+        //替换路径名
         this.$router.replace(this.path);
       }
     }
