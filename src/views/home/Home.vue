@@ -156,7 +156,7 @@
        */
       getHomeMultiData(){
         getHomeMultiData().then(res => {
-          // console.log(res);
+          console.log(res);
           this.banner = res.data.data.banner.list;
           this.recommend = res.data.data.recommend.list
         })

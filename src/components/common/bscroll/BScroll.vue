@@ -30,6 +30,12 @@
         default() {
           return false;
         }
+      },
+      data:{
+        type:Array,
+        default(){
+          return []
+        }
       }
     },
     mounted() {
@@ -53,6 +59,7 @@
 
       })
 
+
     },
     methods:{
       scrollTo(x, y, time=300){
@@ -64,8 +71,12 @@
       finishPullUp(){
         this.scroll.finishPullUp();
       }
+    },
+    watch: {
+      data() {
+        setTimeout(this.refresh, 20)
+      }
     }
-
   }
 </script>
 
