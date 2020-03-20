@@ -5,6 +5,8 @@
 npm install
 ```
 
+### 接口不太稳定，有问题的话务必刷新多几次。
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
