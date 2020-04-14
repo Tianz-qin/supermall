@@ -19,6 +19,10 @@ const routes =[
     redirect:'/home'
   },
   {
+    path:'/supermall',
+    redirect:'/home'
+  },
+  {
     path:'/home',
     component: Home
   },
